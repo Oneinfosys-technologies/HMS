@@ -265,12 +265,16 @@
                 ?>
                 <div class="col-lg-2 col-md-3 col-sm-6 col20" title="<?php echo $this->lang->line('expenses'); ?>">
                     <div class="info-box">
-                        <a href="<?php echo site_url('admin/getbedstatus()') ?>">
-                            <span class="info-box-icon expenes-red"><i class="fab fa-bed"></i></span>
+                        <a href="<?php echo site_url('admin/expense') ?>">
+                            <span class="info-box-icon expenes-red"><i class="fab fa-creative-commons-nc"></i></span>
                             <div class="info-box-content">
                                 <span class="info-box-text"><?php echo $this->lang->line('expenses'); ?></span>
                                 <span class="info-box-number"><?php
-                                    
+                                    if (!empty($expense->amount)) {
+                                        echo $currency_symbol . number_format($expense->amount, 2);
+                                    } else {
+                                        echo $currency_symbol ."0.00";
+                                    }
                                     ?></span>
                             </div>
                         </a>
