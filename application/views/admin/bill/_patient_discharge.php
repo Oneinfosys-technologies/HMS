@@ -41,7 +41,7 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="email"><?php echo $this->lang->line('operation'); ?></label>
-                <textarea name="operation" id="operation" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['operation'];}?></textarea>
+                <textarea name="Details of Surgery If any" id="operation" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['operation'];}?></textarea>
             </div>
         </div>
         <div class="col-sm-6">
@@ -59,7 +59,7 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
         <div class="col-sm-6">
             <div class="form-group">
                 <label for="email"><?php echo $this->lang->line('treatment_home'); ?></label>
-                <textarea name="treatment_home" id="treatment_home" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['treatment_home'];}?></textarea>
+                <textarea name="Course in the Hospital" id="treatment_home" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['treatment_home'];}?></textarea>
             </div>
         </div>
     </div>
