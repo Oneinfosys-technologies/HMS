@@ -259,17 +259,22 @@
                         </a>
                     </div>
                 </div><!--./col-lg-2-->
-                <div class="col-lg-2 col-md-3 col-sm-6 col20" title="<?php echo $this->lang->line('bed_status'); ?>">
-    <div class="info-box">
-        <a href="<?php echo site_url('admin/bed_status') ?>">
-            <span class="info-box-icon bg-blue"><i class="fas fa-bed"></i></span>
-            <div class="info-box-content">
-                <span class="info-box-text"><?php echo $this->lang->line('bed_status'); ?></span>
-                <span class="info-box-number"><?php echo $total_beds; ?></span>
-            </div>
-        </a>
-    </div>
-</div><
+            <?php }} ?>
+<?php if ($this->module_lib->hasActive('expense')) { 
+            if ($this->rbac->hasPrivilege('expenses_widget', 'can_view')) {
+                ?>
+                <div class="col-lg-2 col-md-3 col-sm-6 col20" title="<?php echo $this->lang->line('expenses'); ?>">
+                    <div class="info-box">
+                        <a href="<?php echo site_url('admin/getbedstatus()') ?>">
+                            <span class="info-box-icon expenes-red"><i class="fab fa-bed"></i></span>
+                            <div class="info-box-content">
+                                <span class="info-box-text"><?php echo $this->lang->line('expenses'); ?></span>
+                                <span class="info-box-number"><?php
+                                    
+                                    ?></span>
+                            </div>
+                        </a>
+                    </div>
                 </div><!--./col-lg-2-->
 <?php } } ?>
         </div><!--./row-->
