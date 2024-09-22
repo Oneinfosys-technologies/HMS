@@ -259,26 +259,17 @@
                         </a>
                     </div>
                 </div><!--./col-lg-2-->
-            <?php }} ?>
-<?php if ($this->module_lib->hasActive('expense')) { 
-            if ($this->rbac->hasPrivilege('expenses_widget', 'can_view')) {
-                ?>
-                <div class="col-lg-2 col-md-3 col-sm-6 col20" title="<?php echo $this->lang->line('expenses'); ?>">
-                    <div class="info-box">
-                        <a href="<?php echo site_url('admin/expense') ?>">
-                            <span class="info-box-icon expenes-red"><i class="fab fa-creative-commons-nc"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text"><?php echo $this->lang->line('expenses'); ?></span>
-                                <span class="info-box-number"><?php
-                                    if (!empty($expense->amount)) {
-                                        echo $currency_symbol . number_format($expense->amount, 2);
-                                    } else {
-                                        echo $currency_symbol ."0.00";
-                                    }
-                                    ?></span>
-                            </div>
-                        </a>
-                    </div>
+                <div class="col-lg-2 col-md-3 col-sm-6 col20" title="<?php echo $this->lang->line('bed_status'); ?>">
+    <div class="info-box">
+        <a href="<?php echo site_url('admin/bed_status') ?>">
+            <span class="info-box-icon bg-blue"><i class="fas fa-bed"></i></span>
+            <div class="info-box-content">
+                <span class="info-box-text"><?php echo $this->lang->line('bed_status'); ?></span>
+                <span class="info-box-number"><?php echo $total_beds; ?></span>
+            </div>
+        </a>
+    </div>
+</div><
                 </div><!--./col-lg-2-->
 <?php } } ?>
         </div><!--./row-->

@@ -40,7 +40,7 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
         </div>
         <div class="col-sm-6">
             <div class="form-group">
-                <label for="email"><?php echo $this->lang->line('Details_of_Surgery_If_any'); ?></label>
+                <label for="email"><?php echo $this->lang->line('operation'); ?></label>
                 <textarea name="Details of Surgery If any" id="operation" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['operation'];}?></textarea>
             </div>
         </div>
