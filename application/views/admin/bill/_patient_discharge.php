@@ -1,6 +1,8 @@
 <?php
 $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
 ?>
+<script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+
 <form id="patient_discharge" accept-charset="utf-8" action="<?php echo base_url() ?>admin/bill/add_discharge" method="post" enctype="multipart/form-data">
     <input type="hidden" name="opd_id" value="<?php echo $opd_id; ?>" class="form-control" >
     <input type="hidden" name="id" value="<?php if (!empty($discharge_card)) {echo $discharge_card['id'];}?>" class="form-control">
@@ -38,31 +40,15 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
                 <textarea name="note" id="note" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['note'];}?></textarea>
             </div>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-12">
             <div class="form-group">
-                <label for="email"><?php echo $this->lang->line('operation'); ?></label>
-                <textarea name="Details of Surgery If any" id="operation" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['operation'];}?></textarea>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="email"><?php echo $this->lang->line('diagnosis'); ?></label>
-                <textarea name="diagnosis" id="diagnosis" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['diagnosis'];}?></textarea>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="email"><?php echo $this->lang->line('investigation'); ?></label>
-                <textarea name="investigations" id="investigations" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['investigations'];}?></textarea>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="form-group">
-                <label for="email"><?php echo $this->lang->line('treatment_home'); ?></label>
-                <textarea name="Course in the Hospital" id="treatment_home" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['treatment_home'];}?></textarea>
-            </div>
-        </div>
+                 <label for="email"><?php echo $this->lang->line('discharge_summary'); ?></label>
+                    <textarea name="discharge_summary" id="discharge_summary" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['discharge_summary'];}?></textarea>
+        <script>
+            CKEDITOR.replace('discharge_summary');
+        </script>
     </div>
+</div>
     <div class="row death_status_div" style="display: none;">
         <div class="col-md-6">
             <div class="form-group">
@@ -139,6 +125,31 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
     <?php if ((!empty($discharge_card))) {?>
 
 $('#allpayments_print').html(' <a href="javascript:void(0);" title="<?php echo $this->lang->line('print'); ?>"  class="print_dischargecard" data-recordId="<?php echo $discharge_card['id']; ?>" data-case_id="<?php echo $case_id; ?>" ><i class="fa fa-print"></i> </a>&nbsp; '+download);
+
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Discharge Summary</label>
+            <textarea id="discharge-summary" name="discharge_summary" class="form-control ckeditor"></textarea>
+        </div>
+    </div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="form-group">
+            <label>Discharge Summary</label>
+            <textarea id="discharge-summary" name="discharge_summary" class="form-control ckeditor"></textarea>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        $('#add_paymentbtn').on('click', function() {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>
 
 <?php }?>
 </script>
