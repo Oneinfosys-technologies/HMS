@@ -41,9 +41,9 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
             </div>
         </div>
         <div class="col-sm-12">
-    <div class="form-group">
-        <label for="email"><?php echo $this->lang->line('discharge_summary'); ?></label>
-        <textarea name="discharge_summary" id="discharge_summary" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['discharge_summary'];}?></textarea>
+            <div class="form-group">
+                 <label for="email"><?php echo $this->lang->line('discharge_summary'); ?></label>
+                    <textarea name="discharge_summary" id="discharge_summary" class="form-control" ><?php if (!empty($discharge_card)) {echo $discharge_card['discharge_summary'];}?></textarea>
         <script>
             CKEDITOR.replace('discharge_summary');
         </script>
@@ -125,14 +125,14 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
     <?php if ((!empty($discharge_card))) {?>
 
 $('#allpayments_print').html(' <a href="javascript:void(0);" title="<?php echo $this->lang->line('print'); ?>"  class="print_dischargecard" data-recordId="<?php echo $discharge_card['id']; ?>" data-case_id="<?php echo $case_id; ?>" ><i class="fa fa-print"></i> </a>&nbsp; '+download);
-<div class="row">
+
     <div class="col-md-12">
         <div class="form-group">
             <label>Discharge Summary</label>
             <textarea id="discharge-summary" name="discharge_summary" class="form-control ckeditor"></textarea>
         </div>
     </div>
-</div><div class="row">
+<div class="row">
     <div class="col-md-12">
         <div class="form-group">
             <label>Discharge Summary</label>
@@ -141,7 +141,15 @@ $('#allpayments_print').html(' <a href="javascript:void(0);" title="<?php echo $
     </div>
 </div>
 
-
+<script>
+    $(document).ready(function() {
+        $('#add_paymentbtn').on('click', function() {
+            for (instance in CKEDITOR.instances) {
+                CKEDITOR.instances[instance].updateElement();
+            }
+        });
+    });
+</script>
 
 <?php }?>
 </script>
