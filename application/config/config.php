@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'https://hms.oneinfosys.com/';
+$config['base_url'] = '';
 
 /*
 |--------------------------------------------------------------------------
@@ -532,4 +532,5 @@ $config['rewrite_short_tags'] = FALSE;
 $config['routine_session'] = 16;
 $config['routine_update'] = 1674066600;
 $config['proxy_ips'] = '';
-$config['installed'] = true;
+$config['installed'] = false;
+

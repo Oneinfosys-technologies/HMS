@@ -12,7 +12,7 @@ $currency_symbol = $this->customlib->getHospitalCurrencyFormat();
                         </div>
     <?php } ?>
 </div>    
-<table class="table-print-full" width="90%">
+<table class="table-print-full" width="100%">
     <thead>
         <tr>
             <td><div class="header-space">&nbsp;</div></td>
